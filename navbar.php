@@ -42,6 +42,10 @@ $is_logged_in = isLoggedIn();
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="profile.php"><i class="bi bi-gear"></i> My Profile</a></li>
+                            <?php if (($_SESSION['user_type'] ?? '') === 'service_provider'): ?>
+                                <li><a class="dropdown-item" href="my-provider-profile.php"><i class="bi bi-briefcase"></i> Business Profile</a></li>
+                                <li><a class="dropdown-item" href="provider-dashboard.php"><i class="bi bi-graph-up"></i> Dashboard</a></li>
+                            <?php endif; ?>
                             <li><a class="dropdown-item" href="my-bookings.php"><i class="bi bi-calendar-check"></i> My Bookings</a></li>
                             <li><a class="dropdown-item" href="my-reviews.php"><i class="bi bi-star"></i> My Reviews</a></li>
                             <li><a class="dropdown-item" href="chatbot.php"><i class="bi bi-robot"></i> Support Chat</a></li>
